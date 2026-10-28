@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.rhapsody.gui</groupId>
+    <artifactId>rhapsody-excel-sync</artifactId>
+    <version>3.4</version>
+    <packaging>jar</packaging>
+
+    <name>Rhapsody Excel Sync</name>
+    <description>Production-grade Java Swing utility to parse Excel requirements and automate data model population in IBM Rhapsody.</description>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <poi.version>5.2.3</poi.version>
+    </properties>
+
+    <dependencies>
+        <!-- Apache POI per la lettura dei file Excel .xlsx -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+
+        <!-- IBM Rhapsody Java API (Richiede Rhapsody installato localmente) -->
+        <dependency>
+            <groupId>com.telelogic.rhapsody</groupId>
+            <artifactId>rhapsody</artifactId>
+            <version>9.0.2</version>
+            <scope>system</scope>
+            <systemPath>C:/Program Files/IBM/Rhapsody/9.0.2/Share/JavaAPI/rhapsody.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
